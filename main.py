@@ -1,99 +1,37 @@
-KNIGHTS = [
-    {
-        "name": "Lancelot",
-        "max_hp": 80,
-        "hp": 80,
-        "armor": 20,
-        "weapon": 45
-    },
-    {
-        "name": "King Arthur",
-        "max_hp": 100,
-        "hp": 100,
-        "armor": 30,
-        "weapon": 35
-    }
-]
+import sqlalchemy.orm
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import sessionmaker, declarative_base
+
+engine = create_engine('sqlite:///memory:', echo=True)
+
+Base = declarative_base()
 
 
-class Knight:
+class User(Base):
+    __tablename__ = "users"
 
-    knights_in_game = 0
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    age = Column(Integer)
 
-    def __init__(self, **kwargs):
-        self.name = kwargs["name"]
-        self.max_hp = kwargs["max_hp"]
-        self.hp = kwargs["hp"]
-        self.armor = kwargs["armor"]
-        self.weapon = kwargs["weapon"]
-        self.guarding = False
-        self.alive = True
-        Knight.knights_in_game += 1
+    def __repr__(self):
+        return f"<User(name='{self.name}', age='{self.age}')>"
 
-    def attack(self, opponent):
-        if self.guarding:
-            self.guarding = False
-            self.armor -= 10
-            print(f"{self.name} опускає щит")
+Base.metadata.create_all(bind=engine)
 
-        print(f"{self.name} наносить удар.")
+Session = sessionmaker()
 
-        damage = opponent.armor - self.weapon
-        opponent.hp += damage
-        if opponent.hp <= 0:
-            print(f"{opponent.name} впав з коня. Це кінець для нього!")
-            opponent.alive = False
-            return
-        print(f"{opponent.name} отримав {damage} шкоди, і зараз має {opponent.hp}ХП")
+session = Session()
 
-    @classmethod  # декоратор
-    def amount(cls):
-        print("У грі на даний момент", cls.knights_in_game, "лицарів")
+user1 = User(name="Winnie the Pooh", age=51)
+user2 = User(name="Hong Kong", age=64)
 
-    @staticmethod
-    def heal(knights, health):
-        print("_____________________")
-        for knight in knights:
-            knight.hp += health
-            if knight.hp > knight.max_hp:
-                knight.hp = knight.max_hp
-                print(f"{knight.name} випив зілля здоров'я і повністю одужав")
-            else:
-                print(f"{knight.name} випив зілля здоров'я і відновив {health} очків здоров'я")
-            knight.alive = True
-        print("_____________________")
+session.add(user1)
+session.add(user2)
 
-    @staticmethod
-    def guard(knights, id):
-        print("---------------------")
+session.commit()
 
-        knight = knights[id]
+users = session.query(User).all()
 
-        if not knight.guarding:
-            knight.armor += 10
-            knight.guarding = True
-            print(f"{knight.name} піднімає щит")
-        else:
-            print(f"{knight.name} знову блокує")
-
-        print("---------------------")
-
-
-
-
-def prepare(knights):
-    return [Knight(**i) for i in knights]
-
-
-def battle(knights):
-    knights[0].attack(knights[1])
-    knights[1].attack(knights[0])
-
-
-Knight.amount()
-pair = prepare(KNIGHTS)
-Knight.guard(pair, 1)
-battle(pair)  # round 1
-Knight.heal(pair, 10)
-battle(pair)  # round 2
-Knight.amount()
+for user in users:
+    print(user)
