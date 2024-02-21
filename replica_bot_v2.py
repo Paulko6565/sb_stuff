@@ -141,11 +141,11 @@ holdKey("o", 0.052)
 pyautogui.moveTo(width / 2, (height / 2) + -90)
 abilityAndReset()
 
-'''
+
 while not exit_flag:
     changeCameraAngle()
     walk()
     abilityAndReset()
     pass
     
-'''
+
