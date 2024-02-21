@@ -1,6 +1,5 @@
 from time import sleep
 import keyboard
-import random
 import win32api, win32con
 import pydirectinput
 import pyautogui
@@ -95,7 +94,6 @@ def changeCameraAngle():
     #checking if the portal is behind the player
 
     pixel = pyautogui.screenshot(region=(990, 115, 2, 2))
-    pixel.save(r"C:\Users\Admin\PycharmProjects\pythonProject\pixel.png")
 
     if pyautogui.pixel(990, 115)[0] < 200:
         print("the portal is behind the player")
@@ -148,7 +146,7 @@ def abilityAndReset():
         return
     pressKey("enter")
 
-sleep(0.1)
+sleep(3)
 
 whole_screen = pyautogui.screenshot()
 
