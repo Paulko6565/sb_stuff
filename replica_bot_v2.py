@@ -125,7 +125,7 @@ def abilityAndReset():
     pressKey("r")
     sleep(0.01)
     pressKey("enter")
-    sleep(4)
+    sleep(4.5)
 
 
 sleep(3)
