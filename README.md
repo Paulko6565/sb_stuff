@@ -7,7 +7,7 @@ All the commands only target the roblox instances that you aren't currently focu
 
 1 - !reset - Makes all your alts reset character.
 
-2 - !arena (buggy) - Makes your alts that are in the lobby walk into the arena portal (This command will take a long time to finish and you gotta use it twice for the first time for it to work, I don't know why).
+2 - !arena (buggy) - Makes your alts that are in the lobby walk into the arena portal (This command will take a long time for it to finish and you gotta use it twice for the first time for it to work, I don't know why).
 
 3 - !dance - Makes your alts bust 'em moves.
 
