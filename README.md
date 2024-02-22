@@ -29,4 +29,7 @@ Use this command in the command prompt to install all the required modules:
 
 
 # Replica Bot (bob grinder)
-it's broken for now lol
+It works, but it could be better.
+
+> [!TIP]
+> Press ```q``` to stop the bot on the next cycle.
