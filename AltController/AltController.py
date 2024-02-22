@@ -234,7 +234,7 @@ def checkChat():
 
     #scatter command
     try:
-        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
+        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if scatterCommand:
             chat("walking to a random position...")
             action("scatter")
@@ -243,7 +243,7 @@ def checkChat():
 
     #slap command
     try:
-        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
+        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if slapCommand:
             chat("bonk")
             action("slap")
@@ -252,7 +252,7 @@ def checkChat():
 
     #tournament command
     try:
-        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
+        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if tournamentCommand:
             chat("attempting to join the competition...")
             action("tournament")
@@ -307,4 +307,8 @@ windowSwitchTimer = 8
 
 while True:
     checkChat()
+    sleep(0.2)
+    windowSwitchTimer -= 1
+    if windowSwitchTimer == 1:
+        switchWindow()
     sleep(0.2)
