@@ -65,6 +65,13 @@ def useAbility():
         pressKey("1")
         pressKey("e")
 
+def pullOutGlove():
+    gloveArea = pyautogui.screenshot(region=(925, 1000, 100, 100))
+    gloveEquipped = scanForColor(gloveArea, 90, 142, 233)
+
+    if not gloveEquipped:
+        pressKey("1")
+
 def dance():
     gloveArea = pyautogui.screenshot(region=(925, 1000, 100, 100))
     gloveEquipped = scanForColor(gloveArea, 90, 142, 233)
@@ -83,6 +90,7 @@ def changeCameraAngle():
         return
 
     holdKey("i", 1)
+
     for i in range(1, 7):
         scroll(-150)
         sleep(0.1)
@@ -100,6 +108,8 @@ def changeCameraAngle():
         reset()
         return
 
+    sleep(0.1)
+
 def walkToArena():
     gloveArea = pyautogui.screenshot(region=(925, 1000, 100, 100))
     gloveEquipped = scanForColor(gloveArea, 90, 142, 233)
@@ -108,7 +118,7 @@ def walkToArena():
         return
     
     whole_screen = pyautogui.screenshot()
-    pyautogui.moveTo(width / 2, (height / 2) + -90)
+    pyautogui.moveTo(width / 2, (height / 2) + -190)
 
     mouse_pos = pyautogui.position()
 
@@ -128,7 +138,7 @@ def walkToArena():
         pressKey("space")
         holdKey("w", 1)
 
-    elif pyautogui.pixelMatchesColor(mouse_pos[0], mouse_pos[1], (30, 10, 50), tolerance=80) or pyautogui.pixelMatchesColor(mouse_pos[0], mouse_pos[1],(130, 130, 130), tolerance=99) or pyautogui.pixel(mouse_pos[0], mouse_pos[1])[0] <= 250:
+    elif pyautogui.pixelMatchesColor(mouse_pos[0], mouse_pos[1], (30, 10, 50), tolerance=99) or pyautogui.pixelMatchesColor(mouse_pos[0], mouse_pos[1],(130, 130, 130), tolerance=99) or pyautogui.pixel(mouse_pos[0], mouse_pos[1])[0] <= 250:
         pressKey("space")
         holdKey("a", 0.2)
         sleep(0.2)
@@ -159,8 +169,14 @@ def tournament():
 
     try:
         button = pyautogui.locateCenterOnScreen("accept.png", confidence=0.8)
-        pydirectinput.click(button.x, button.y)
-        sleep(0.1)
+        pydirectinput.moveTo(button.x, button.y)
+
+        sleep(0.01)
+
+        pydirectinput.mouseDown()
+        sleep(0.05)
+        pydirectinput.mouseUp()
+        sleep(0.05)
 
     except pyautogui.ImageNotFoundException:
         return
@@ -180,15 +196,15 @@ def switchWindow():
         print("error", e)
         pass
 
+def sendSilent():
+    chat("/e a")
+
 def checkChat():
-    chatMessage = pyautogui.screenshot(region=(0, 254, 400, 25))
-    chatMessage.save(r"C:\Users\Admin\Desktop\AltController\chat.png")
-    
     #reset command
     try:
         resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if resetCommand:
-            chat("respawning...")
+            sendSilent()
             action("reset")
     except pyautogui.ImageNotFoundException:
         pass
@@ -197,10 +213,7 @@ def checkChat():
     try:
         arenaCommand = pyautogui.locateOnScreen("arena.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if arenaCommand:
-            chat("entering the arena...")
-            action("ability")
-            action("jump")
-            action("camera")
+            sendSilent()
             action("arena")
     except pyautogui.ImageNotFoundException:
         pass
@@ -209,7 +222,7 @@ def checkChat():
     try:
         danceCommand = pyautogui.locateOnScreen("dance.png", grayscale=True, confidence=0.95, region=(0, 254, 400, 25))
         if danceCommand:
-            chat("initiating epik moves")
+            sendSilent()
             action("dance")
     except pyautogui.ImageNotFoundException:
         pass
@@ -218,7 +231,7 @@ def checkChat():
     try:
         jumpCommand = pyautogui.locateOnScreen("jump.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if jumpCommand:
-            chat("hop")
+            sendSilent()
             action("jump")
     except pyautogui.ImageNotFoundException:
         pass
@@ -227,34 +240,34 @@ def checkChat():
     try:
         abilityCommand = pyautogui.locateOnScreen("ability.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
         if abilityCommand:
-            chat("using gloves...")
+            sendSilent()
             action("ability")
     except pyautogui.ImageNotFoundException:
         pass
 
     #scatter command
     try:
-        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
         if scatterCommand:
-            chat("walking to a random position...")
+            sendSilent()
             action("scatter")
     except pyautogui.ImageNotFoundException:
         pass
 
     #slap command
     try:
-        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
         if slapCommand:
-            chat("bonk")
+            sendSilent()
             action("slap")
     except pyautogui.ImageNotFoundException:
         pass
 
     #tournament command
     try:
-        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.97, region=(0, 254, 400, 25))
         if tournamentCommand:
-            chat("attempting to join the competition...")
+            sendSilent()
             action("tournament")
     except pyautogui.ImageNotFoundException:
         pass
@@ -264,14 +277,17 @@ def action(action, argument=None):
     previous_focused_window = gw.getActiveWindow()
     
     for window in windows:
-        if window.title == "Roblox":
+        if window.title == "Roblox" and window != previous_focused_window:
             window.activate()
+
+            sendSilent()
 
             if action == "reset":
                 reset()
-            elif action == "camera":
-                changeCameraAngle()
             elif action == "arena":
+                pullOutGlove()
+                pressKey("space")
+                changeCameraAngle()
                 walkToArena()
             elif action == "jump":
                 pressKey("space")
@@ -303,12 +319,6 @@ def action(action, argument=None):
 
 sleep(1)
 
-windowSwitchTimer = 8
-
 while True:
     checkChat()
-    sleep(0.2)
-    windowSwitchTimer -= 1
-    if windowSwitchTimer == 1:
-        switchWindow()
     sleep(0.2)
