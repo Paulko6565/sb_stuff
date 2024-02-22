@@ -130,9 +130,6 @@ def walkToArena():
 
 
 def checkChat():
-    chatMessage = pyautogui.screenshot(region=(0, 254, 400, 25))
-    chatMessage.save(r"C:\Users\Admin\PycharmProjects\pythonProject\chat.png")
-
     #reset command
     try:
         resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.95, region=(0, 274, 400, 25))
@@ -154,7 +151,7 @@ def checkChat():
 
     #dance command
     try:
-        danceCommand = pyautogui.locateOnScreen("dance.png", grayscale=True, confidence=0.95, region=(0, 274, 400, 25))
+        danceCommand = pyautogui.locateOnScreen("dance.png", grayscale=True, confidence=0.9, region=(0, 274, 400, 25))
         if danceCommand:
             chat("...")
             action("dance")
@@ -163,7 +160,7 @@ def checkChat():
 
     #jump command
     try:
-        jumpCommand = pyautogui.locateOnScreen("jump.png", grayscale=True, confidence=0.95, region=(0, 274, 400, 25))
+        jumpCommand = pyautogui.locateOnScreen("jump.png", grayscale=True, confidence=0.9, region=(0, 274, 400, 25))
         if jumpCommand:
             chat("...")
             action("jump")
@@ -172,7 +169,7 @@ def checkChat():
 
     #ability command
     try:
-        abilityCommand = pyautogui.locateOnScreen("ability.png", grayscale=True, confidence=0.95, region=(0, 274, 400, 25))
+        abilityCommand = pyautogui.locateOnScreen("ability.png", grayscale=True, confidence=0.9, region=(0, 274, 400, 25))
         if abilityCommand:
             chat("...")
             action("ability")
