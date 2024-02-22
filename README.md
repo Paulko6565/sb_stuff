@@ -4,8 +4,7 @@ Use this command in the command prompt to install all the requires modules:
 ```pip install pydirectinput keyboard pygetwindow pyautogui```
 
 > [!NOTE]
-> Useful information that users should know, even when skimming content.
-Anyone can use the chat commands to control your alts.
+> Anyone can use the chat commands to control your alts.
 
 There are currently 8 commands implemented in the alt controller bot.
 
