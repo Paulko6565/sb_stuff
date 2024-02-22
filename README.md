@@ -1,5 +1,5 @@
 # Alt Controller:
-Use this command in the command prompt to install all the requires modules:
+Use this command in the command prompt to install all the required modules:
 
 ```pip install pydirectinput keyboard pygetwindow pyautogui```
 
