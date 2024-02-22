@@ -20,3 +20,8 @@ All the commands only target the roblox instances that you aren't currently focu
 7 - !slap - Makes your alts pull out their glove and click.
 
 8 - !tournament (buggy) - Makes your alts join the tournament, if there is currently a tournament notification.
+
+
+
+#Replica Bot (bob grinder)
+it's broken for now lol
