@@ -6,9 +6,9 @@ Use this command in the command prompt to install all the requires modules:
 > [!NOTE]
 > Anyone can use the chat commands to control your alts.
 
-There are currently 8 commands implemented in the alt controller bot.
+> There are currently 8 commands implemented in the alt controller bot.
 
-All the commands only target the roblox instances that you aren't currently focused into.
+> All the commands only target the roblox instances that you aren't currently focused into.
 ```
 1 - !reset - Makes all your alts reset character.
 
