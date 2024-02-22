@@ -23,5 +23,5 @@ All the commands only target the roblox instances that you aren't currently focu
 
 
 
-#Replica Bot (bob grinder)
+# Replica Bot (bob grinder)
 it's broken for now lol
