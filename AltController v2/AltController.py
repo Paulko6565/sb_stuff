@@ -200,9 +200,6 @@ def sendSilent():
     chat("/e a")
 
 def checkChat():
-    chatMessage = pyautogui.screenshot(region=(0, 254, 400, 25))
-    chatMessage.save(r"C:\Users\Admin\PycharmProjects\pythonProject\AltController v2\chat.png")
-    
     #reset command
     try:
         resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
