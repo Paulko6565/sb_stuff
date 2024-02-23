@@ -1,6 +1,5 @@
 import pydirectinput
 import keyboard
-import pygetwindow
 import pygetwindow as gw
 import pyautogui
 import random
@@ -174,9 +173,9 @@ def tournament():
         sleep(0.01)
 
         pydirectinput.mouseDown()
-        sleep(0.05)
+        sleep(0.1)
         pydirectinput.mouseUp()
-        sleep(0.05)
+        sleep(0.1)
 
     except pyautogui.ImageNotFoundException:
         return
@@ -192,7 +191,7 @@ def switchWindow():
 
     try:
         windows[randomWindow].activate()
-    except pygetwindow.PyGetWindowException as e:
+    except gw.PyGetWindowException as e:
         print("error", e)
         pass
 
