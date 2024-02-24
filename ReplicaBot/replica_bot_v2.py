@@ -137,7 +137,7 @@ height = whole_screen.height
 
 #resetting and adjusting the camera
 holdKey("i", 1)
-holdKey("o", 0.052)
+holdKey("o", 0.23)
 pyautogui.moveTo(width / 2, (height / 2) + -90)
 abilityAndReset()
 
