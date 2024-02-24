@@ -85,7 +85,7 @@ def walk():
             holdKey("w", 1)
 
         else:
-            print("i dunno, resetting...")
+            print("i dunno")
             abilityAndReset()
 
 
