@@ -63,6 +63,7 @@ def useAbility():
     else:
         pressKey("1")
         pressKey("e")
+    pressKey("1")
 
 def pullOutGlove():
     gloveArea = pyautogui.screenshot(region=(925, 1000, 100, 100))
@@ -89,6 +90,8 @@ def changeCameraAngle():
         return
 
     holdKey("i", 1)
+
+    sleep(0.5)
 
     for i in range(1, 7):
         scroll(-150)
@@ -199,6 +202,8 @@ def sendSilent():
     chat("/e a")
 
 def checkChat():
+    chatPosition = (0, 254, 400, 25)
+
     #reset command
     try:
         resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
@@ -274,43 +279,48 @@ def action(action, argument=None):
     windows = gw.getAllWindows()
     
     previous_focused_window = gw.getActiveWindow()
+
+    sleep(0.1)
     
     for window in windows:
         if window.title == "Roblox" and window != previous_focused_window:
-            window.activate()
-
-            sendSilent()
-
-            if action == "reset":
-                reset()
-            elif action == "arena":
-                pullOutGlove()
-                pressKey("space")
-                changeCameraAngle()
-                walkToArena()
-            elif action == "jump":
-                pressKey("space")
-            elif action == "dance":
-                dance()
-            elif action == "chat" and argument:
-                chat(argument)
-            elif action == "disconnect":
-                window.close()
-                sleep(0.05)
-                window.close()
-                sleep(0.05)
-            elif action == "ability":
-                useAbility()
-            elif action == "scatter":
-                scatter()
-            elif action == "slap":
-                pydirectinput.click()
-                sleep(0.09)
-            elif action == "tournament":
-                tournament()
-            else:
-                print("Error")
-                return
+            try:
+                window.activate()
+                sleep(0.1)
+                sendSilent()
+                if action == "reset":
+                    reset()
+                elif action == "arena":
+                    pullOutGlove()
+                    pressKey("space")
+                    changeCameraAngle()
+                    walkToArena()
+                elif action == "jump":
+                    pressKey("space")
+                elif action == "dance":
+                    dance()
+                elif action == "chat" and argument:
+                    chat(argument)
+                elif action == "disconnect":
+                    window.close()
+                    sleep(0.05)
+                    window.close()
+                    sleep(0.05)
+                elif action == "ability":
+                    useAbility()
+                elif action == "scatter":
+                    scatter()
+                elif action == "slap":
+                    pydirectinput.click()
+                    sleep(0.09)
+                elif action == "tournament":
+                    tournament()
+                else:
+                    print("Error")
+                    return
+            except gw.PyGetWindowException:
+                pass
+        window.minimize()
     
     if previous_focused_window:
         previous_focused_window.activate()
@@ -320,4 +330,4 @@ sleep(1)
 
 while True:
     checkChat()
-    sleep(0.2)
+    sleep(1)
