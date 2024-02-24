@@ -13,6 +13,7 @@ Use this command in the command prompt to install all the required modules:
 1 - !reset - Makes all your alts reset character.
 
 2 - !arena (buggy) - Makes your alts that are in the lobby walk into the arena portal (This command will take a long time for it to finish and you gotta use it twice for the first time for it to work, I don't know why).
+Your alts camera sensitivity must be set to 0.68 for this to work properly
 
 3 - !dance - Makes your alts bust 'em moves.
 
