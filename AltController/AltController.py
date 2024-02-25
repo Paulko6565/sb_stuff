@@ -204,9 +204,12 @@ def sendSilent():
 def checkChat():
     chatPosition = (0, 254, 400, 25)
 
+    chatMessage = pyautogui.screenshot(region=chatPosition)
+    chatMessage.save(r"C:\Users\user\epic_directory\message.png") #replace this with the path you want it to be saved in
+
     #reset command
     try:
-        resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        resetCommand = pyautogui.locateOnScreen("reset.png", grayscale=True, confidence=0.935, region=chatPosition)
         if resetCommand:
             sendSilent()
             action("reset")
@@ -215,7 +218,7 @@ def checkChat():
 
     #arena command
     try:
-        arenaCommand = pyautogui.locateOnScreen("arena.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        arenaCommand = pyautogui.locateOnScreen("arena.png", grayscale=True, confidence=0.935, region=chatPosition)
         if arenaCommand:
             sendSilent()
             action("arena")
@@ -224,7 +227,7 @@ def checkChat():
 
     #dance command
     try:
-        danceCommand = pyautogui.locateOnScreen("dance.png", grayscale=True, confidence=0.95, region=(0, 254, 400, 25))
+        danceCommand = pyautogui.locateOnScreen("dance.png", grayscale=True, confidence=0.95, region=chatPosition)
         if danceCommand:
             sendSilent()
             action("dance")
@@ -233,7 +236,7 @@ def checkChat():
 
     #jump command
     try:
-        jumpCommand = pyautogui.locateOnScreen("jump.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        jumpCommand = pyautogui.locateOnScreen("jump.png", grayscale=True, confidence=0.935, region=chatPosition)
         if jumpCommand:
             sendSilent()
             action("jump")
@@ -242,7 +245,7 @@ def checkChat():
 
     #ability command
     try:
-        abilityCommand = pyautogui.locateOnScreen("ability.png", grayscale=True, confidence=0.935, region=(0, 254, 400, 25))
+        abilityCommand = pyautogui.locateOnScreen("ability.png", grayscale=True, confidence=0.935, region=chatPosition)
         if abilityCommand:
             sendSilent()
             action("ability")
@@ -251,7 +254,7 @@ def checkChat():
 
     #scatter command
     try:
-        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
+        scatterCommand = pyautogui.locateOnScreen("scatter.png", grayscale=True, confidence=0.934, region=chatPosition)
         if scatterCommand:
             sendSilent()
             action("scatter")
@@ -260,7 +263,7 @@ def checkChat():
 
     #slap command
     try:
-        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.934, region=(0, 254, 400, 25))
+        slapCommand = pyautogui.locateOnScreen("slap.png", grayscale=True, confidence=0.934, region=chatPosition)
         if slapCommand:
             sendSilent()
             action("slap")
@@ -269,7 +272,7 @@ def checkChat():
 
     #tournament command
     try:
-        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.97, region=(0, 254, 400, 25))
+        tournamentCommand = pyautogui.locateOnScreen("tournament.png", grayscale=True, confidence=0.97, region=chatPosition)
         if tournamentCommand:
             sendSilent()
             action("tournament")
@@ -330,4 +333,4 @@ sleep(1)
 
 while True:
     checkChat()
-    sleep(1)
+    sleep(3)
