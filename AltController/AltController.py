@@ -205,7 +205,8 @@ def checkChat():
     chatPosition = (0, 254, 400, 25)
 
     chatMessage = pyautogui.screenshot(region=chatPosition)
-    chatMessage.save(r"C:\Users\user\epic_directory\message.png") #replace this with the path you want it to be saved in
+    chatMessage.save(r"C:\Users\Admin\PycharmProjects\pythonProject\AltControllere a"
+                     r"\message.png") #replace this with the path you want it to be saved in
 
     #reset command
     try:
@@ -323,7 +324,6 @@ def action(action, argument=None):
                     return
             except gw.PyGetWindowException:
                 pass
-        window.minimize()
     
     if previous_focused_window:
         previous_focused_window.activate()
