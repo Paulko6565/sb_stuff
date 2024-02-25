@@ -163,6 +163,7 @@ def scatter():
     pydirectinput.click(0, 0, 1, 0, "right")
 
 def tournament():
+    #unequip the glove if it is equipped
     gloveArea = pyautogui.screenshot(region=(925, 1000, 100, 100))
     gloveEquipped = scanForColor(gloveArea, 90, 142, 233)
 
@@ -333,4 +334,4 @@ sleep(1)
 
 while True:
     checkChat()
-    sleep(3)
+    sleep(0.5)
