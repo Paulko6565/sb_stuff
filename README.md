@@ -1,8 +1,8 @@
-# Alt Controller:
 Use this command in the command prompt to install all the required modules:
 
 ```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python```
 
+# Alt Controller:
 > [!NOTE]
 > Anyone can use the chat commands to control your alts.
 
