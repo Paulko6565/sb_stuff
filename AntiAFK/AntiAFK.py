@@ -1,6 +1,4 @@
-import pydirectinput
 import keyboard
-import pyautogui
 import pygetwindow as gw
 from time import sleep
 
@@ -9,11 +7,6 @@ def pressKey(key):
     sleep(0.015)
     keyboard.release(key)
     sleep(0.015)
-
-def reset():
-    pressKey("esc")
-    pressKey("r")
-    pressKey("enter")
 
 
 def action():
@@ -28,15 +21,14 @@ def action():
             try:
                 window.activate()
                 sleep(0.1)
-                pressKey("1")
+                pressKey("1")  # equips / un-equips your glove
             except gw.PyGetWindowException:
-                pass
+                print("the program can't access this roblox window for some reason, woops")
 
     if previous_focused_window:
         previous_focused_window.activate()
-for i in range(1, 6): #1, 6 - 60 minutes
-    sleep(100 * 6)
+
+
+while True:
     action()
-    print("10 minutes have passed")
-    
-print("an hour passed")
+    sleep(100 * 6)  # waits for 10 minutes before doing the action again
