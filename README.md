@@ -34,3 +34,8 @@ It works, but it could be better.
 
 > [!TIP]
 > Press ```q``` to stop the bot on the next cycle.
+
+# Anti AFK
+Prevents your roblox instances from getting kicked for being idle.
+> [!NOTE]
+> This is compatible with multiple roblox instances running at the same time
