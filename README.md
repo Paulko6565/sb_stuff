@@ -39,3 +39,7 @@ It works, but it could be better.
 Prevents your roblox instances from getting kicked for being idle.
 > [!NOTE]
 > This is compatible with multiple roblox instances running at the same time
+
+
+# Scythe Tower Defense bot
+Work in Progress...
