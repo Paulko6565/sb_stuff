@@ -34,7 +34,7 @@ def action():
 
     if previous_focused_window:
         previous_focused_window.activate()
-for i in range(1, 6):
+for i in range(1, 6): #1, 6 - 60 minutes
     sleep(100 * 6)
     action()
     print("10 minutes have passed")
