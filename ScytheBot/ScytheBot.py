@@ -3,8 +3,6 @@ import keyboard
 import pydirectinput
 import pyautogui
 
-start_flag = False
-
 
 def move(x, y):
     pyautogui.moveTo(x, y)
@@ -64,24 +62,9 @@ def priority(mode):
 def buy_upgrade():
     click(212, 746)
 
-def start(key):
-    global start_flag
-    if key.name == 'q':
-        start_flag = True
-
 
 print("Press 'q' when you're ready to start the bot")
-keyboard.on_press(start)
-
-sleep(1)
-
-while True:
-    if not start_flag:
-        sleep(1)
-        pass
-    else:
-        break
-
+keyboard.wait("q")
 
 move(500, 500)
 
@@ -152,7 +135,7 @@ priority("First")
 
 sleep(16)
 
-place_troop(3, 1349, 531)
+place_troop(3, 1349, 551)
 
 click(1349, 531)
 priority("First")
@@ -175,14 +158,106 @@ priority("Last")
 
 hold_key("w", 1)
 
-sleep(14)
+sleep(17)
 
 click(1264, 537)
 buy_upgrade()
 close()
 
-sleep(10)
+sleep(6)
 
 click(1349, 531)
 buy_upgrade()
 close()
+
+hold_key("s", 1)
+
+click(1312, 574)
+buy_upgrade()
+close()
+
+sleep(18)
+
+click(1373, 570)
+buy_upgrade()
+close()
+
+hold_key("w", 1)
+
+sleep(13)
+
+click(1264, 537)
+buy_upgrade()
+close()
+
+sleep(34)
+
+click(1349, 531)
+buy_upgrade()
+close()
+
+hold_key("s", 1)
+
+sleep(15)
+
+click(1312, 574)
+buy_upgrade()
+close()
+
+sleep(20)
+
+click(1373, 575)
+buy_upgrade()
+close()
+
+hold_key("w", 1)
+hold_key("a", 1)
+
+sleep(10)
+
+place_troop(4, 554, 606)
+
+click(554, 606)
+priority("First")
+
+sleep(10)
+
+place_troop(4, 585, 607)
+
+click(585, 607)
+priority("First")
+
+sleep(10)
+
+place_troop(4, 632, 606)
+
+click(632, 606)
+priority("First")
+
+click(554, 606)
+buy_upgrade()
+
+sleep(8)
+
+click(585, 607)
+buy_upgrade()
+
+sleep(10)
+
+click(632, 606)
+buy_upgrade()
+
+sleep(10)
+
+click(554, 606)
+buy_upgrade()
+
+sleep(8)
+
+click(585, 607)
+buy_upgrade()
+
+sleep(10)
+
+click(632, 606)
+buy_upgrade()
