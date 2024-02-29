@@ -1,4 +1,4 @@
-from time import sleep
+from time import sleep, time
 import keyboard
 import pydirectinput
 import pyautogui
@@ -215,21 +215,21 @@ hold_key("a", 1)
 
 sleep(10)
 
-place_troop(4, 554, 606)
+place_troop(4, 554, 626)
 
 click(554, 606)
 priority("First")
 
 sleep(10)
 
-place_troop(4, 585, 607)
+place_troop(4, 585, 627)
 
 click(585, 607)
 priority("First")
 
 sleep(10)
 
-place_troop(4, 632, 606)
+place_troop(4, 632, 626)
 
 click(632, 606)
 priority("First")
@@ -261,3 +261,6 @@ sleep(10)
 
 click(632, 606)
 buy_upgrade()
+close()
+
+hold_key("d", 1)
