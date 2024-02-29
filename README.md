@@ -53,7 +53,7 @@ Instructions:
   
 > 90% chance of success (Sometimes, troop placement can be delayed due to high ping, which can break the bot)
 > 
-> Estimate time of completion: ??? minutes
+> Estimate time of completion: 4:30
 
 
 # Scythe Tower Defense bot
@@ -68,7 +68,7 @@ Instructions:
   
 > 80% chance of success (The bot may not place / misplace some troops, which can cause the game to go downhill)
 > 
-> Estimate time of completion: 11 minutes
+> Estimate time of completion: 11:00
 
 > [!NOTE]
 > Several Elusive Thieves may slip by on wave 5. It won't be enough to kill you, so it's fine.
