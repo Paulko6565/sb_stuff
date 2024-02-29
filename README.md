@@ -51,6 +51,7 @@ Instructions:
 6) - Once you have fully loaded in - press `Q`
   
 > 80% chance of success
+> 
 > Estimate time of completion: 11 minutes
 
 > [!NOTE]
