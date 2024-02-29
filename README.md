@@ -49,6 +49,9 @@ Instructions:
 4) - Run the bot and drink the potion
 5) - When you get teleported to the place, don't move your camera or press anything
 6) - Once you have fully loaded in - press `Q`
+  
+> 80% chance of success
+> Estimate time of completion: 11 minutes
 
 > [!NOTE]
 > If the bot is doing nothing, then it's probably waiting for money
