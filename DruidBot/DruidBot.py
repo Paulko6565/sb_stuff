@@ -157,7 +157,7 @@ sleep(25)
 click(665, 997)
 buy_upgrade()
 
-sleep(85)
+sleep(100)
 
 roblox_window = pygetwindow.getActiveWindow()
 
