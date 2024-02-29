@@ -42,23 +42,36 @@ Prevents your roblox instances from getting kicked for being idle.
 
 
 # Druid Tower Defense bot
-Work in Progress...
+Instructions:
+1) - Equip Alchemist
+2) - Gather and put 1 Blood Rose, 1 Dark Root, 1 Elder Wood, 1 Jade Stone and 3 Wild Vines into the cauldron
+3) - Brew the Corrupted Vine potion.
+4) - Run the bot and drink the potion.
+5) - When you get teleported to the tower defense place, don't move your camera or press anything. (The game won't begin until a tower is placed)
+6) - Once you have fully loaded in - press `Q`.
+7) - Sit back and let the bot do the rest.
+  
+> 90% chance of success (Sometimes, troop placement can be delayed due to high ping, which can break the bot)
+> 
+> Estimate time of completion: 4:30
+
+>[!NOTE]
+>The game will close automatically after beating wave 6 and getting the badge
 
 
 # Scythe Tower Defense bot
 Instructions:
-1) - Equip Alchemist
-2) - Gather 1 Hazel Lily and 2 Plane Flowers
-3) - Brew the Corrupted Field potion
-4) - Run the bot and drink the potion
-5) - When you get teleported to the place, don't move your camera or press anything
-6) - Once you have fully loaded in - press `Q`
+1) - Equip Alchemist.
+2) - Gather and put 1 Hazel Lily and 2 Plane Flowers into the cauldron.
+3) - Brew the Corrupted Field potion.
+4) - Run the bot and drink the potion.
+5) - When you get teleported to the tower defense place, don't move your camera or press anything. (The game won't begin until a tower is placed)
+6) - Once you have fully loaded in - press `Q`.
+7) - Sit back and let the bot do the rest.
   
-> 80% chance of success
+> 80% chance of success (The bot may not place / misplace some troops, which can cause the game to go downhill)
 > 
-> Estimate time of completion: 11 minutes
+> Estimate time of completion: 11:00
 
 > [!NOTE]
-> If the bot is doing nothing, then it's probably waiting for money
-> 
 > Several Elusive Thieves may slip by on wave 5. It won't be enough to kill you, so it's fine.
