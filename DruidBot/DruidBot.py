@@ -162,4 +162,5 @@ sleep(100)
 roblox_window = pygetwindow.getActiveWindow()
 
 roblox_window.close()
+sleep(0.1)
 roblox_window.close()
