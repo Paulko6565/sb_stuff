@@ -41,6 +41,10 @@ Prevents your roblox instances from getting kicked for being idle.
 > This is compatible with multiple roblox instances running at the same time
 
 
+# Druid Tower Defense bot
+Work in Progress...
+
+
 # Scythe Tower Defense bot
 Instructions:
 1) - Equip Alchemist
@@ -56,3 +60,5 @@ Instructions:
 
 > [!NOTE]
 > If the bot is doing nothing, then it's probably waiting for money
+> 
+> Several Elusive Thieves may slip by on wave 5. It won't be enough to kill you, so it's fine.
