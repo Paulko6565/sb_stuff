@@ -42,4 +42,17 @@ Prevents your roblox instances from getting kicked for being idle.
 
 
 # Scythe Tower Defense bot
-Work in Progress...
+Instructions:
+1) - Equip Alchemist
+2) - Gather 1 Hazel Lily and 2 Plane Flowers
+3) - Brew the Corrupted Field potion
+4) - Run the bot and drink the potion
+5) - When you get teleported to the place, don't move your camera or press anything
+6) - Once you have fully loaded in - press `Q`
+  
+> 80% chance of success
+> 
+> Estimate time of completion: 11 minutes
+
+> [!NOTE]
+> If the bot is doing nothing, then it's probably waiting for money
