@@ -75,3 +75,15 @@ Instructions:
 
 > [!NOTE]
 > Several Elusive Thieves may slip by on wave 5. It won't be enough to kill you, so it's fine.
+
+
+# Keybinds
+```
+F1 - Uses the ability on all of your alts, except the one you're currently controlling.
+F2 - Uses the ability on all of your alts.
+F3 - Resets all the alts that you're not currently controlling.
+F4 - Ends the program
+```
+
+> [!NOTE]
+> You can change the keybinds or add your own by going to `line 12`
