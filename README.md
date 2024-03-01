@@ -55,9 +55,6 @@ Instructions:
 > 
 > Estimate time of completion: 4:30
 
->[!NOTE]
->The game will close automatically after beating wave 6 and getting the badge
-
 
 # Scythe Tower Defense bot
 Instructions:
