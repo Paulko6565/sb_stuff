@@ -2,7 +2,6 @@ from time import sleep, time
 import keyboard
 import pydirectinput
 import pyautogui
-import pygetwindow
 
 
 def move(x, y):
