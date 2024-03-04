@@ -2,12 +2,15 @@ Use this command in the command prompt to install all the required modules:
 
 ```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python```
 
+>[!WARNING]
+>Replica Bot, Tower Defense bots and Alt Controller are designed to work specifically on 1920 x 1080 resolution.
+
 # Alt Controller:
 > [!NOTE]
 > Anyone can use the chat commands to control your alts.
 
 > There are currently 8 commands implemented in the alt controller bot.
-
+> 
 > All the commands only target the roblox instances that you aren't currently focused into.
 ```
 1 - !reset - Makes all your alts reset character.
@@ -55,9 +58,6 @@ Instructions:
 > 
 > Estimate time of completion: 4:30
 
->[!NOTE]
->The game will close automatically after beating wave 6 and getting the badge
-
 
 # Scythe Tower Defense bot
 Instructions:
@@ -75,3 +75,15 @@ Instructions:
 
 > [!NOTE]
 > Several Elusive Thieves may slip by on wave 5. It won't be enough to kill you, so it's fine.
+
+
+# Keybinds
+```
+F1 - Uses the ability on all of your alts, except the one you're currently controlling.
+F2 - Uses the ability on all of your alts.
+F3 - Resets all the alts that you're not currently controlling.
+F4 - Ends the program
+```
+
+> [!NOTE]
+> You can change the keybinds or add your own by going to `line 12`
