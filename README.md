@@ -1,6 +1,6 @@
 Use this command in the command prompt to install all the required modules:
 
-```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python```
+```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python pydirectinput-rgx```
 
 >[!WARNING]
 >Replica Bot, Tower Defense bots and Alt Controller are designed to work specifically on 1920 x 1080 resolution.
