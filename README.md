@@ -1,6 +1,6 @@
 Use this command in the command prompt to install all the required modules:
 
-```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python```
+```pip install pydirectinput keyboard pygetwindow pyautogui opencv-python pydirectinput-rgx```
 
 >[!WARNING]
 >Replica Bot, Tower Defense bots and Alt Controller are designed to work specifically on 1920 x 1080 resolution.
@@ -78,12 +78,19 @@ Instructions:
 
 
 # Keybinds
+## Slap Battles
 ```
 F1 - Uses the ability on all of your alts, except the one you're currently controlling.
 F2 - Uses the ability on all of your alts.
 F3 - Resets all the alts that you're not currently controlling.
-F4 - Ends the program
 ```
 
-> [!NOTE]
-> You can change the keybinds or add your own by going to `line 12`
+## Slap Royale
+```
+F1 - Makes every alt accept the Slap Royale invite
+F2 - Makes the alts accept the ongoing vote kick
+F3 - Makes the alts decline the ongoing vote kick
+F4 - Makes every alt that you're not currently controlling leave the game (The combat logging system will still grant the kill to whoever slapped your alt last)
+```
+
+F5 toggles between SB and SR modes
