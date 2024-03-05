@@ -147,6 +147,7 @@ def decline():
 
     debounce = False
 
+
 def disconnect():
     windows = gw.getAllWindows()
 
@@ -154,9 +155,15 @@ def disconnect():
 
     for window in windows:
         if window.title == "Roblox" and window != previous_focused_window:
-            window.close()
-            sleep(0.02)
-            window.close()
+            try:
+                window.activate()
+                sleep(0.02)
+                if pyautogui.pixel(738, 177)[0] == 255:
+                    window.close()
+                    sleep(0.02)
+                    window.close()
+            except gw.PyGetWindowException:
+                print("Failed to load the window")
 
     if previous_focused_window:
         previous_focused_window.activate()
