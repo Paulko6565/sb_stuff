@@ -83,7 +83,6 @@ Instructions:
 F1 - Uses the ability on all of your alts, except the one you're currently controlling.
 F2 - Uses the ability on all of your alts.
 F3 - Resets all the alts that you're not currently controlling.
-F4 - Ends the program
 ```
 
 ## Slap Royale
