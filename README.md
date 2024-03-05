@@ -94,5 +94,4 @@ F3 - Makes the alts decline the ongoing vote kick
 F4 - Makes every alt that you're not currently controlling leave the game (The combat logging system will still grant the kill to whoever slapped your alt last)
 ```
 
-> [!NOTE]
-> You can change the keybinds or add your own by going to `line 12`
+F5 toggles between SB and SR modes
