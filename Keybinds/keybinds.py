@@ -158,7 +158,7 @@ def disconnect():
             try:
                 window.activate()
                 sleep(0.02)
-                if pyautogui.pixel(738, 177)[0] == 255:
+                if pyautogui.pixel(736, 176)[0] >= 240:
                     window.close()
                     sleep(0.02)
                     window.close()
