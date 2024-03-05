@@ -155,13 +155,25 @@ def disconnect():
 
     for window in windows:
         if window.title == "Roblox" and window != previous_focused_window:
+            window.close()
+            sleep(0.02)
+            window.close()
+
+    if previous_focused_window:
+        previous_focused_window.activate()
+
+
+def jump():
+    windows = gw.getAllWindows()
+
+    previous_focused_window = gw.getActiveWindow()
+
+    for window in windows:
+        if window.title == "Roblox" and window != previous_focused_window:
             try:
                 window.activate()
                 sleep(0.02)
-                if pyautogui.pixel(736, 176)[0] >= 240:
-                    window.close()
-                    sleep(0.02)
-                    window.close()
+                press_key("space")
             except gw.PyGetWindowException:
                 print("Failed to load the window")
 
@@ -199,6 +211,9 @@ def action(key):
 
         elif key.name == "f4":  # makes every alt you're not currently controlling leave the game
             disconnect()
+
+        elif key.name == "f6":  # makes every alt you're not currently controlling leave the game
+            jump()
 
 
 keyboard.on_press(action)
