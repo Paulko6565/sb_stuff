@@ -1,9 +1,12 @@
 import keyboard
+import pyautogui
+import pydirectinput
 import pygetwindow as gw
 import playsound
 from time import sleep
 
 toggle = 0
+debounce = False
 
 
 def switch_toggle():
@@ -25,6 +28,29 @@ def press_key(key):
     sleep(0.015)
     keyboard.release(key)
     sleep(0.015)
+
+
+def click(x, y):
+    pydirectinput.click(x, y)
+    sleep(0.1)
+
+
+def accept_invite():
+    windows = gw.getAllWindows()
+
+    previous_focused_window = gw.getActiveWindow()
+
+    for window in windows:
+         if window.title == "Roblox":
+            try:
+                window.activate()
+                sleep(0.02)
+                click(764, 172)
+            except gw.PyGetWindowException:
+                print("Failed to load the window")
+
+    if previous_focused_window:
+        previous_focused_window.activate()
 
 
 def ability(mode):
@@ -75,9 +101,13 @@ def reset():
 
 
 def accept():
+    global debounce
+
     windows = gw.getAllWindows()
 
     previous_focused_window = gw.getActiveWindow()
+
+    debounce = True
 
     for window in windows:
         if window.title == "Roblox":
@@ -91,11 +121,17 @@ def accept():
     if previous_focused_window:
         previous_focused_window.activate()
 
+    debounce = False
+
 
 def decline():
+    global debounce
+
     windows = gw.getAllWindows()
 
     previous_focused_window = gw.getActiveWindow()
+
+    debounce = True
 
     for window in windows:
         if window.title == "Roblox":
@@ -109,6 +145,7 @@ def decline():
     if previous_focused_window:
         previous_focused_window.activate()
 
+    debounce = False
 
 def disconnect():
     windows = gw.getAllWindows()
@@ -126,27 +163,34 @@ def disconnect():
 
 
 def action(key):
-    if key.name == "f6":
+    global debounce
+
+    if key.name == "f5":
         switch_toggle()
 
     if toggle == 0:  # Slap Battles Mode
-        if key.name == "f3":  # uses the ability on every alt except the one you're currently controlling
+        if key.name == "f1":  # uses the ability on every alt except the one you're currently controlling
             ability("others")
 
-        elif key.name == "f4":  # uses the ability on every alt
+        elif key.name == "f2":  # uses the ability on every alt
             ability("all")
 
-        elif key.name == "f5":  # resets every alt except the one you're currently controlling
+        elif key.name == "f3":  # resets every alt except the one you're currently controlling
             reset()
 
     elif toggle == 1:  # Slap Royale Mode
-        if key.name == "f3":  # makes every alt accept the ongoing vote kick
-            accept()
+        if key.name == "f1":  # makes every alt accept the slap royale invitation
+            if not debounce:
+                accept_invite()
 
-        elif key.name == "f4":  # makes every alt decline the ongoing vote kick
+        elif key.name == "f2":  # makes every alt accept the ongoing vote kick
+            if not debounce:
+                accept()
+
+        elif key.name == "f3":  # makes every alt decline the ongoing vote kick
             decline()
 
-        elif key.name == "f5":  # makes every alt you're not currently controlling leave the game (the combat logging system will still grant the kill to whoever slapped your alt last)
+        elif key.name == "f4":  # makes every alt you're not currently controlling leave the game
             disconnect()
 
 
