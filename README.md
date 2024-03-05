@@ -78,11 +78,20 @@ Instructions:
 
 
 # Keybinds
+## Slap Battles
 ```
 F1 - Uses the ability on all of your alts, except the one you're currently controlling.
 F2 - Uses the ability on all of your alts.
 F3 - Resets all the alts that you're not currently controlling.
 F4 - Ends the program
+```
+
+## Slap Royale
+```
+F1 - Makes every alt accept the Slap Royale invite
+F2 - Makes the alts accept the ongoing vote kick
+F3 - Makes the alts decline the ongoing vote kick
+F4 - Makes every alt that you're not currently controlling leave the game (The combat logging system will still grant the kill to whoever slapped your alt last)
 ```
 
 > [!NOTE]
