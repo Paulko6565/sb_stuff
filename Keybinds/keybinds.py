@@ -172,7 +172,7 @@ def jump():
         if window.title == "Roblox" and window != previous_focused_window:
             try:
                 window.activate()
-                sleep(0.02)
+                sleep(0.07)
                 press_key("space")
             except gw.PyGetWindowException:
                 print("Failed to load the window")
